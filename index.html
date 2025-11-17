@@ -42,12 +42,18 @@
       }
 
       @keyframes typing {
-        from { width: 0; }
-        to { width: 100%; }
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
       }
 
       @keyframes blink {
-        50% { border-color: transparent; }
+        50% {
+          border-color: transparent;
+        }
       }
 
       nav {
@@ -75,7 +81,9 @@
         animation: fadeInUp 1s ease forwards;
       }
 
-      .section:nth-child(even) { animation-delay: 0.3s; }
+      .section:nth-child(even) {
+        animation-delay: 0.3s;
+      }
 
       .about,
       .timeline,
@@ -101,9 +109,14 @@
         padding: 0;
       }
 
-      .timeline li { margin-bottom: 15px; }
+      .timeline li {
+        margin-bottom: 15px;
+      }
 
-      .notes p { font-style: italic; margin-bottom: 12px; }
+      .notes p {
+        font-style: italic;
+        margin-bottom: 12px;
+      }
 
       footer {
         text-align: center;
@@ -114,9 +127,34 @@
       }
 
       /* Animations */
-      @keyframes fadeInUp { 0% {opacity:0; transform: translateY(20px);} 100% {opacity:1; transform: translateY(0);} }
-      @keyframes fadeInDown { 0% {opacity:0; transform: translateY(-20px);} 100% {opacity:1; transform: translateY(0);} }
-      @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
       /* Floating hearts */
       .heart {
@@ -138,21 +176,44 @@
         background: red;
         border-radius: 50%;
       }
-      .heart::before { top: -10px; left: 0; }
-      .heart::after { left: -10px; top: 0; }
+      .heart::before {
+        top: -10px;
+        left: 0;
+      }
+      .heart::after {
+        left: -10px;
+        top: 0;
+      }
       @keyframes floatUp {
-        0% { bottom: 0; transform: translateX(0) rotate(45deg); opacity: 0.8; }
-        100% { bottom: 100vh; transform: translateX(-50px) rotate(45deg); opacity: 0; }
+        0% {
+          bottom: 0;
+          transform: translateX(0) rotate(45deg);
+          opacity: 0.8;
+        }
+        100% {
+          bottom: 100vh;
+          transform: translateX(-50px) rotate(45deg);
+          opacity: 0;
+        }
       }
 
       /* Scroll to top button */
       #topBtn {
-        position: fixed; bottom: 20px; right: 20px; z-index: 999;
-        background-color: #ffb6c1; border: none; padding: 10px 15px;
-        border-radius: 10px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        background-color: #ffb6c1;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         display: none;
       }
-      #topBtn:hover { background-color: #e68fae; }
+      #topBtn:hover {
+        background-color: #e68fae;
+      }
 
       /* Gallery Styles */
       .media-gallery {
@@ -167,7 +228,9 @@
         cursor: pointer;
         transition: transform 0.3s ease;
       }
-      .media-gallery .thumb:hover { transform: scale(1.05); }
+      .media-gallery .thumb:hover {
+        transform: scale(1.05);
+      }
       .media-gallery img {
         width: 100%;
         height: 100%;
@@ -180,28 +243,39 @@
         top: 50%;
         transform: translate(-50%, -50%);
         font-size: 28px;
-        background: rgba(255,255,255,0.7);
+        background: rgba(255, 255, 255, 0.7);
         padding: 6px 12px;
         border-radius: 999px;
       }
       .lightbox {
-        position: fixed; inset:0;
-        background: rgba(0,0,0,0.6);
-        display: flex; align-items:center; justify-content:center;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         z-index: 10000;
       }
       .lightbox-inner {
-        position: relative; padding:1rem;
+        position: relative;
+        padding: 1rem;
       }
-      .lightbox-inner img, .lightbox-inner video {
-        max-width: 90vw; max-height: 80vh;
+      .lightbox-inner img,
+      .lightbox-inner video {
+        max-width: 90vw;
+        max-height: 80vh;
         border-radius: 12px;
       }
       .close-btn {
         position: absolute;
-        top: -10px; right: -10px;
-        background:#fff; border:none; border-radius:50%;
-        padding:6px 10px; cursor:pointer; font-weight:bold;
+        top: -10px;
+        right: -10px;
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -223,7 +297,12 @@
 
     <div id="about" class="section about">
       <h2>About You</h2>
-      <p>Daniella, you are calm like the dawn, beautiful as spring, and intelligent beyond words. Your virtue shines brighter than the stars, your sense of humor leaves a smile on my face, and your essence brings peace to the world.</p>
+      <p>
+        Daniella, you are calm like the dawn, beautiful as spring, and
+        intelligent beyond words. Your virtue shines brighter than the stars,
+        your sense of humor leaves a smile on my face, and your essence brings
+        peace to the world.
+      </p>
     </div>
 
     <div id="timeline" class="section timeline">
@@ -231,8 +310,13 @@
       <ul>
         <li>✨ The Day We Met – A new chapter began</li>
         <li>💬 Endless Chats – Conversations I never want to end</li>
-        <li>❤️ First "I Love You" – The most magical words, yet to be said😁</li>
-        <li>📆 Special Memories – Too many to count yet, but all will be treasured.</li>
+        <li>
+          ❤️ First "I Love You" – The most magical words, yet to be said😁
+        </li>
+        <li>
+          📆 Special Memories – Too many to count yet, but all will be
+          treasured.
+        </li>
       </ul>
     </div>
 
@@ -240,7 +324,10 @@
       <h2>Your Dreams</h2>
       <p>I Left This Space So You Can Fill It Out Yourself😂</p>
       <h2>Favorite Quote</h2>
-      <p>"I'm learning to trust the timing of my life, everything I want is finding it's way to me.💅"</p>
+      <p>
+        "I'm learning to trust the timing of my life, everything I want is
+        finding it's way to me.💅"
+      </p>
     </div>
 
     <!-- Gallery Section -->
@@ -248,43 +335,46 @@
       <h2>Photo & Video Memories</h2>
       <div class="media-gallery" id="mediaGallery">
         <!-- Photos -->
-        <div class="thumb"><img src="images/Daniella_1.jpg" alt="Moment 1"></div>
-        <div class="thumb"><img src="images/Daniella_2.jpg" alt="Moment 2"></div>
-        <!-- Videos -->
-        <div class="thumb video-thumb" data-video="media/video1.mp4">
-          <img src="images/Daniella_3.mp4" alt="Video 1">
-          <div class="play">▶</div>
+        <div class="thumb">
+          <img src="images/Daniella_1.jpg" alt="Moment 1" />
         </div>
-        <div class="thumb video-thumb" data-video="media/video2.mp4">
-          <img src="images/Daniella_4.mp4" alt="Video 2">
-          <img src="images/Daniella_5.mp4" alt="Video 3">
-          <div class="play">▶</div>
+        <div class="thumb">
+          <img src="images/Daniella_2.jpg" alt="Moment 2" />
         </div>
       </div>
     </div>
 
     <div id="notes" class="section notes">
       <h2>Love Notes</h2>
-      <p>In a world full of noise, your calm is my peace. You are my favorite notification.</p>
+      <p>
+        In a world full of noise, your calm is my peace. You are my favorite
+        notification.
+      </p>
       <p>Each day with you is a gift I want to unwrap with joy.</p>
       <p>I Love listening to your voice when you speak.</p>
     </div>
 
     <div id="closing" class="section closing">
       <h2>Final Word</h2>
-      <p>Forever grateful for your love to come, Daniella. This is a token of my admiration and love for you. You are not just part of my story – you are the story.</p>
+      <p>
+        Forever grateful for your love to come, Daniella. This is a token of my
+        admiration and love for you. You are not just part of my story – you are
+        the story.
+      </p>
     </div>
 
     <footer>With love from, <strong>Micky</strong>💖</footer>
 
-    <button id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ Top</button>
+    <button id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      ↑ Top
+    </button>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" style="display:none">
+    <div class="lightbox" id="lightbox" style="display: none">
       <div class="lightbox-inner">
         <button class="close-btn" onclick="closeLightbox()">✕</button>
-        <img id="lightboxImg" src="" alt="" style="display:block">
-        <video id="lightboxVideo" src="" controls style="display:none"></video>
+        <img id="lightboxImg" src="" alt="" style="display: block" />
+        <video id="lightboxVideo" src="" controls style="display: none"></video>
       </div>
     </div>
 
@@ -301,13 +391,14 @@
 
       // Show scroll to top button
       window.onscroll = () => {
-        document.getElementById("topBtn").style.display = window.scrollY > 300 ? "block" : "none";
+        document.getElementById("topBtn").style.display =
+          window.scrollY > 300 ? "block" : "none";
       };
 
       // Slideshow (if needed in gallery)
       const slides = document.querySelectorAll(".slideshow img");
       let current = 0;
-      if(slides.length > 0){
+      if (slides.length > 0) {
         setInterval(() => {
           slides[current].classList.remove("active");
           current = (current + 1) % slides.length;
@@ -323,9 +414,9 @@
 
       mediaGallery.addEventListener("click", (e) => {
         const thumb = e.target.closest(".thumb");
-        if(!thumb) return;
+        if (!thumb) return;
 
-        if(thumb.classList.contains("video-thumb")) {
+        if (thumb.classList.contains("video-thumb")) {
           lightboxImg.style.display = "none";
           lightboxVideo.src = thumb.dataset.video;
           lightboxVideo.style.display = "block";
