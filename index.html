@@ -266,6 +266,9 @@
         max-height: 80vh;
         border-radius: 12px;
       }
+      .lightbox-inner video {
+        background: #000;
+      }
       .close-btn {
         position: absolute;
         top: -10px;
@@ -393,7 +396,7 @@
       <div class="lightbox-inner">
         <button class="close-btn" onclick="closeLightbox()">✕</button>
         <img id="lightboxImg" src="" alt="" style="display: block" />
-        <video id="lightboxVideo" src="" controls style="display: none"></video>
+        <video id="lightboxVideo" src="" controls autoplay style="display: none"></video>
       </div>
     </div>
 
