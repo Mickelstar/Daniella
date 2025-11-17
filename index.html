@@ -346,19 +346,19 @@
         </div>
         <!-- Videos -->
         <div class="thumb video-thumb" data-video="images/Daniella_3.mp4.mp4">
-          <video width="100%" height="100%" style="object-fit: cover;" preload="metadata" poster="images/Daniella_3.mp4.mp4#t=0.1">
+          <video width="100%" height="100%" style="object-fit: cover;" preload="metadata">
             <source src="images/Daniella_3.mp4.mp4" type="video/mp4">
           </video>
           <div class="play">▶</div>
         </div>
         <div class="thumb video-thumb" data-video="images/Daniella_4.mp4.mp4">
-          <video width="100%" height="100%" style="object-fit: cover;" preload="metadata" poster="images/Daniella_4.mp4.mp4#t=0.1">
+          <video width="100%" height="100%" style="object-fit: cover;" preload="metadata">
             <source src="images/Daniella_4.mp4.mp4" type="video/mp4">
           </video>
           <div class="play">▶</div>
         </div>
         <div class="thumb video-thumb" data-video="images/Daniella_5.mp4.mp4">
-          <video width="100%" height="100%" style="object-fit: cover;" preload="metadata" poster="images/Daniella_5.mp4.mp4#t=0.1">
+          <video width="100%" height="100%" style="object-fit: cover;" preload="metadata">
             <source src="images/Daniella_5.mp4.mp4" type="video/mp4">
           </video>
           <div class="play">▶</div>
@@ -396,7 +396,7 @@
       <div class="lightbox-inner">
         <button class="close-btn" onclick="closeLightbox()">✕</button>
         <img id="lightboxImg" src="" alt="" style="display: block" />
-        <video id="lightboxVideo" src="" controls autoplay style="display: none"></video>
+        <video id="lightboxVideo" src="" controls autoplay muted style="display: none"></video>
       </div>
     </div>
 
@@ -441,6 +441,7 @@
         if (thumb.classList.contains("video-thumb")) {
           lightboxImg.style.display = "none";
           lightboxVideo.src = thumb.dataset.video;
+          lightboxVideo.muted = false;
           lightboxVideo.style.display = "block";
         } else {
           lightboxVideo.style.display = "none";
@@ -454,7 +455,23 @@
         lightbox.style.display = "none";
         lightboxVideo.pause();
         lightboxVideo.src = "";
+        lightboxVideo.muted = true;
       }
+
+      // Generate video thumbnails on load
+      window.addEventListener("load", () => {
+        document.querySelectorAll(".video-thumb video").forEach(video => {
+          video.addEventListener("loadedmetadata", () => {
+            const canvas = document.createElement("canvas");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(video, 0, 0);
+            const thumbnail = canvas.toDataURL("image/jpeg");
+            video.style.backgroundImage = `url(${thumbnail})`;
+          });
+        });
+      });
     </script>
   </body>
 </html>
